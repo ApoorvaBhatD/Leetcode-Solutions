@@ -1,19 +1,13 @@
 class Solution:
-    def selfDividingNumbers(self, left: int, right: int) -> List[int]:
-        result=[]
-        count=0
-        for num in range (left,right+1):
-            num1=str(num)
-            if '0' in num1:
-                continue
-            else:
-                for i in range (0,len(num1)):
-                    if num%int(num1[i])!=0:
-                        count+=1
-            if count==0:
+    def selfDividingNumbers(self, left: int, right: int) -> list[int]:
+        result = []
+        for num in range(left, right + 1):
+            num_str = str(num)
+            divisible = True
+            for digit in num_str:
+                if digit == '0' or num % int(digit) != 0:
+                    divisible = False
+                    break
+            if divisible:
                 result.append(num)
-            count=0
         return result
-                        
-
-            
