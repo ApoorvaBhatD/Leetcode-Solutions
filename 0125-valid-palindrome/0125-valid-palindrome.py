@@ -4,6 +4,6 @@ class Solution:
         for char in s:
             if char.isalnum():
                 charlist.append(char.lower())
-        return True if charlist==charlist[::-1] else False
+        return charlist==charlist[::-1] 
 
 
