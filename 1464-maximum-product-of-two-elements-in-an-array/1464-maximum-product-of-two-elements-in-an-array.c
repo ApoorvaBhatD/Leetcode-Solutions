@@ -1,16 +1,16 @@
 int maxProduct(int* nums, int numsSize) {
-    int swap;
-    for (int i=0;i<numsSize-1;i++){
-        swap=0;
-        for (int j=0;j<numsSize-1-i;j++){
-            if (nums[j]>nums[j+1]){
-                int t = nums[j];
-                nums[j]=nums[j+1];
-                nums[j+1]=t;
-                swap=1;
-            } 
-        }
-        if (swap==0) break;
+    int n1=0,n2=0;
+    int n1_ind;
+    for (int i=0;i<numsSize;i++){
+        if (nums[i]>n1) {
+            n1=nums[i];
+            n1_ind=i;
+            }
     }
-    return (nums[numsSize-1]-1)*(nums[numsSize-2]-1);
+    for (int i=0;i<numsSize;i++){
+        if (i!=n1_ind){
+            if (nums[i]>n2) n2=nums[i];
+        }
+    }
+    return (n1-1)*(n2-1);
 }
