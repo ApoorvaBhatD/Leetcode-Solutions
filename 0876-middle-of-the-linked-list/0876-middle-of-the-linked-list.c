@@ -7,22 +7,11 @@
  */
 struct ListNode* middleNode(struct ListNode* head) {
     if (head==NULL) return head;
-    struct ListNode* temp=head;
-    struct ListNode* midList=head;
-    int count=0,mid;
-    while(temp!=NULL){
-        count++;
-        temp=temp->next;
+    struct ListNode* slow=head;
+    struct ListNode* fast=head;
+    while (fast!=NULL && fast->next!=NULL){
+        slow=slow->next;
+        fast=fast->next->next;
     }
-    int check=1;
-    mid=(count/2)+1;
-
-        while(check<mid){
-            
-            midList=midList->next;
-            check++;
-        }
-    
-    return midList;
-
+    return slow;
 }
