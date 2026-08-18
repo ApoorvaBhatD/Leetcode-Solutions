@@ -1,14 +1,8 @@
 int trailingZeroes(int n) {
-    int x=n,count=0;
-    int k=5;
-    if (n<5) return 0;
-
-    while (x>0){
-        x=n/k;
-        count=count+x;
-        k=k*5;
+    long long count=0;
+    while (n>=5){
+        n=n/5;
+        count=count+n; 
     }
     return count;
-
-    
 }
