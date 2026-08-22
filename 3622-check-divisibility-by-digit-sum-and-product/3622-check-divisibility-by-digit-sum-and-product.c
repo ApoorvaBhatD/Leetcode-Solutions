@@ -8,6 +8,5 @@ bool checkDivisibility(int n) {
         div=div/10;
     }
     int num= sum+prod;
-    if (n%num==0) return true;
-    else return false;
+    return num!=0 && n%num==0;
 }
