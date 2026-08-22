@@ -1,5 +1,5 @@
 class Solution:
     def findMissingElements(self, nums: List[int]) -> List[int]:
-        #nums_set=set(nums)
+        nums_set=set(nums)
         low,high = min(nums),max(nums)
-        return [i for i in range (low,high+1) if i not in nums]
+        return [i for i in range (low,high+1) if i not in nums_set]
